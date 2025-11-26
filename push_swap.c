@@ -22,15 +22,30 @@
 
 t_list	ft_checkav(int ac, char **av, t_list *a)
 {
-	int	*array;
+	char	**args;
+	int		i;
+	int		j;
 
+	i = 1;
 	if (ac <= 1)
 		return ;
 	else
 	{
-		//split
-		//checknum
-		//fill
+		while (i < ac)
+			{
+				//split
+				/*args = ft_split(av[i], ' ');*/ 
+				j = 0;
+				while (args[j])
+					{
+						//checknum - si es valido pasarlo por atoi o atol / si no liberarlo
+						//tmp = ft_atoi(args[j])
+						//fill stack con addback cast a int
+						j++;
+					}
+				i++;
+			}
+		//check algun num repe
 	}
 }
 
