@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:51:41 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/11/28 11:13:23 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/10/07 13:20:15 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/10/14 13:29:51 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// stack.h
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include "FxUtils/libft_ps.h"
-
-typedef struct s_list
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	void			*value;
-	struct s_list	*next;
-}	t_list;
+	char	*tmp;
+	size_t	x;
 
-#endif
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	tmp = (char *)malloc(sizeof(char) * len + 1);
+	if (!tmp)
+		return (NULL);
+	x = 0;
+	while (x < len)
+	{
+		tmp[x] = s[start + x];
+		x++;
+	}
+	tmp[x] = 0;
+	return (tmp);
+}

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:51:41 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/11/28 11:13:23 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/09/30 13:25:32 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/10/01 12:16:39 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// stack.h
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include "FxUtils/libft_ps.h"
-
-typedef struct s_list
+size_t	ft_strlen(const char *s)
 {
-	void			*value;
-	struct s_list	*next;
-}	t_list;
+	size_t	i;
 
-#endif
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}

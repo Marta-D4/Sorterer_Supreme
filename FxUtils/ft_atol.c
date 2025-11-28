@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:51:41 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/11/28 11:13:23 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/11/28 11:58:03 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/11/28 12:01:48 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// stack.h
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft_ps.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include "FxUtils/libft_ps.h"
-
-typedef struct s_list
+long	ft_atol(const char *nptr)
 {
-	void			*value;
-	struct s_list	*next;
-}	t_list;
+	int		i;
+	int		sign;
+	long	sum;
 
-#endif
+	i = 0;
+	sign = 1;
+	sum = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-')
+		sign *= -1;
+	if (nptr[i] == '-' || nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		sum = (sum * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (sum * sign);
+}

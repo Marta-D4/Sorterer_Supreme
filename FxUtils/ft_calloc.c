@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:51:41 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/11/28 11:13:23 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/10/07 11:37:40 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/10/07 12:33:29 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// stack.h
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include "FxUtils/libft_ps.h"
-
-typedef struct s_list
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*value;
-	struct s_list	*next;
-}	t_list;
+	void	*ptr;
 
-#endif
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
+}
