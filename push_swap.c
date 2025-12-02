@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:50:25 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/11/28 13:00:23 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/02 12:39:16 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,33 @@ t_list	ft_checkav(int ac, char **av, t_list *a)
 	char	**args;
 	int		i;
 	int		j;
+	long	num;
 
 	i = 1;
 	while (i < ac)
 	{
 		args = ft_split(av[i], ' ');
-		if (!args)
-			return ;
 		j = 0;
 		while (args[j])
 		{
-			/*checknum
-			atol
-			fill stack
-			liberar mem*/
+			if (!ft_isnumvalid(args[j]))
+				ft_freeall(args[j], a);
+			num = ft_atol(args[j]);
+			if (!ft_isnumlimit(num))
+				ft_freeall(args[j], a);
+			lst_addback(a, lst_new((int)num));
 			j++;
 		}
 		i++;
 	}
 }
+/*if (!args)
+	return ;
+checknum
+atol
+fill stack
+free mem
+*/
 
 int	main(int ac, char **av)
 {
@@ -46,6 +54,5 @@ int	main(int ac, char **av)
 	b = NULL;
 	if (ac <= 1)
 		return ;
-	else
-		ft_checkav(ac, av, &a);
+	ft_checkav(ac, av, &a);
 }

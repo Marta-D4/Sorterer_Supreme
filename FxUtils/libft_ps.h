@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:35:50 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/11/28 11:37:40 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:00:16 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strchr(const char *s, int c);
 size_t		ft_strlen(const char *str);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
+//OTHERS
+long		ft_atol(const char *nptr);
 
 #endif
