@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:50:25 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/02 12:39:16 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/04 11:29:09 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,20 @@ t_list	ft_checkav(int ac, char **av, t_list *a)
 			j++;
 		}
 		i++;
+		ft_cleararray(args);
 	}
 }
-/*if (!args)
-	return ;
-checknum
-atol
-fill stack
-free mem
-*/
 
 int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
+	int		lsize;
 
-	a = NULL;
-	b = NULL;
 	if (ac <= 1)
 		return ;
+	a = NULL;
+	b = NULL;
 	ft_checkav(ac, av, &a);
+	lsize = lst_size(a);
 }

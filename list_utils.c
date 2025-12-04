@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 12:37:57 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/01 10:54:18 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/04 12:41:28 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,12 @@ void	lst_addback(t_list **lst, t_list *newnode)
 	}
 	last = lst_last(*lst);
 	last->next = newnode;
+}
+
+void	lst_addfront(t_list **lst, t_list *newnode)
+{
+	if (!lst || !newnode)
+		return ;
+	newnode->next = *lst;
+	*lst = newnode;
 }

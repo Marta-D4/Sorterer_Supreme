@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:18:21 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/02 12:07:55 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/04 11:01:28 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	lst_clear(t_list **lst, void (*del)(void *))
 	{
 		next = tmp->next;
 		del(tmp);
-		//free(tmp);
 		tmp = next;
 	}
 	*lst = NULL;
