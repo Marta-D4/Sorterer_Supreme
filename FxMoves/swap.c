@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 11:33:15 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/04 11:51:51 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:31:39 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	fx_swap(t_list **lst)
 	t_list	*fnode;
 	t_list	*snode;
 
-	if (!lst || !*lst)
+	if (!lst || !*lst || !(*lst)->next)
 		return ;
 	fnode = *lst;
 	snode = fnode->next;

@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 12:49:03 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/05 12:55:04 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/12/05 11:08:09 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/12/05 12:30:31 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	fx_push(t_list **nodeFrom, t_list **nodeFor)
+void	fx_rotate(t_list **lst)
 {
 	t_list	*tmp;
 
-	if (!nodeFrom || !*nodeFrom)
+	if (!lst || !*lst || !(*lst)->next)
 		return ;
-	tmp = *nodeFrom;
-	*nodeFrom = tmp->next;
-	lst_addfront(nodeFor, tmp);
+	tmp = *lst;
+	*lst = tmp->next;
+	tmp->next = NULL;
+	lst_addback(lst, tmp);
 }
 
-void	fx_pa(t_list **a, t_list **b)
+void	fx_ra(t_list **a)
 {
-	fx_push(b, a);
-	ft_printf("pa\n");
+	fx_rotate(a);
+	ft_printf("ra\n");
 }
 
-void	fx_pb(t_list **a, t_list **b)
+void	fx_rb(t_list **b)
 {
-	fx_push(a, b);
-	ft_printf("pb\n");
+	fx_rotate(b);
+	ft_printf("rb\n");
+}
+
+void	fx_rr(t_list **a, t_list **b)
+{
+	fx_rotate(a);
+	fx_rotate(b);
+	ft_printf("rr\n");
 }
