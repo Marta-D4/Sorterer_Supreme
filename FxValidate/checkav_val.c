@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:48:34 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/01 12:54:29 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/09 12:20:19 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,38 @@ int	ft_isnumlimit(long num)
 {
 	if (num < INT_MIN || num > INT_MAX)
 		return (0);
+	return (1);
+}
+
+/*0 si no hay nums repetidos, 1 si los hay*/
+int	ft_isnumrepeat(t_list **lst)
+{
+	t_list	*node;
+	t_list	*tmp;
+
+	tmp = *lst;
+	while (tmp && tmp->next)
+	{
+		node = tmp->next;
+		while (node)
+		{
+			if (tmp->value == node->value)
+				return (1);
+			node = node->next;
+		}
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+/*0 si no está ordenado, 1 si lo está*/
+int	ft_islstsorted(t_list *node)
+{
+	while (node && node->next)
+	{
+		if (node->value > node->next->value)
+			return (0);
+		node = node->next;
+	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:50:25 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/04 11:29:09 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/09 12:44:50 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ t_list	ft_checkav(int ac, char **av, t_list *a)
 		i++;
 		ft_cleararray(args);
 	}
+	if (ft_isnumrepeat(a))
+		ft_freeall(args, a);
 }
 
 int	main(int ac, char **av)
@@ -51,4 +53,9 @@ int	main(int ac, char **av)
 	b = NULL;
 	ft_checkav(ac, av, &a);
 	lsize = lst_size(a);
+	if (!ft_islstsorted(a))
+	{
+		if (lsize == 2)
+			fx_sa(a);
+	}
 }
