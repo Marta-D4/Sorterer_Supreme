@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:50:25 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/09 12:44:50 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:21:43 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ t_list	ft_checkav(int ac, char **av, t_list *a)
 		while (args[j])
 		{
 			if (!ft_isnumvalid(args[j]))
-				ft_freeall(args[j], a);
+				ft_freeall(args[j], &a);
 			num = ft_atol(args[j]);
 			if (!ft_isnumlimit(num))
-				ft_freeall(args[j], a);
-			lst_addback(a, lst_new((int)num));
+				ft_freeall(args[j], &a);
+			lst_addback(&a, lst_new((int)num));
 			j++;
 		}
 		i++;
 		ft_cleararray(args);
 	}
-	if (ft_isnumrepeat(a))
-		ft_freeall(args, a);
+	if (ft_isnumrepeat(&a))
+		ft_freeall(args, &a);
 }
 
 int	main(int ac, char **av)
@@ -51,11 +51,18 @@ int	main(int ac, char **av)
 		return ;
 	a = NULL;
 	b = NULL;
-	ft_checkav(ac, av, &a);
+	ft_checkav(ac, av, a);
 	lsize = lst_size(a);
 	if (!ft_islstsorted(a))
 	{
 		if (lsize == 2)
 			fx_sa(a);
+		else if (lsize == 3)
+			ft_little_sort(&a);
+		else
+			ft_turkish_sort(&a, &b);
 	}
+	ft_cleararray(&a);
+	ft_cleararray(&b);
+	return (0);
 }

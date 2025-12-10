@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   little_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 11:33:15 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/09 13:11:48 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/12/10 12:07:10 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/12/10 13:22:34 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	fx_swap(t_list **lst)
+t_list	*lst_find_biggest(t_list *lst)
 {
-	t_list	*fnode;
-	t_list	*snode;
+	t_list	*max;
 
-	if (!lst || !*lst || !(*lst)->next)
+	if (!lst)
 		return ;
-	fnode = *lst;
-	snode = fnode->next;
-	fnode->next = snode->next;
-	snode->next = fnode;
-	*lst = snode;
+	max = lst;
+	while (lst)
+	{
+		if (lst->value > max->value)
+			max = lst;
+		lst = lst->next;
+	}
+	return (max);
 }
 
-void	fx_sa(t_list **a)
+void	ft_little_sort(t_list **a)
 {
-	ft_swap(a);
-	ft_printf("sa\n");
-}
+	t_list	*biggest;
 
-void	fx_sb(t_list **b)
-{
-	ft_swap(b);
-	ft_printf("sb\n");
-}
-
-void	fx_ss(t_list **a, t_list **b)
-{
-	ft_swap(a);
-	ft_swap(b);
-	ft_printf("ss\n");
+	biggest = lst_find_biggest(*a);
+	if (biggest == *a)
+		fx_ra(a);
+	else if (biggest == (*a)->next)
+		fx_rra(a);
+	if((*a)->value > (*a)->next->value)
+		fx_sa(a);
 }
