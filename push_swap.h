@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:51:41 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/09 12:19:29 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:17:53 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 typedef struct s_list
 {
 	void			*value;
+	int				cost_top;
+	int				target_cost_top;
+	int				below_median;
+	int				target_below_median;
+	int				total_cost;
 	struct s_list	*next;
 }	t_list;
 t_list		*lst_new(void *value);
@@ -35,6 +40,20 @@ int			ft_isnumvalid(char *num);
 int			ft_isnumlimit(long num);
 int			ft_isnumrepeat(t_list **lst);
 int			ft_islstsorted(t_list *node);
+//ALGORITHMS
+void		ft_little_sort(t_list **a);
+t_list		*lst_find_biggest(t_list *lst);
+t_list		*lst_find_lowest(t_list *lst);
+void		ft_turkish_sort(t_list **a, t_list **b);
+void		moves_cost(t_list *lst);
+int			get_target(t_list *a, t_list *b);
+void		target_cost(t_list *a, t_list *b);
+void		total_cost(t_list **b);
+t_list		*select_few_moves(t_list *b);
+void		move_to_push(t_list **a, t_list **b, t_list *few_moves);
+void		move_b_top(t_list **b, t_list *few_moves);
+void		move_a_top(t_list **a, t_list *few_moves);
+void		final_moves(t_list **a, t_list *lowest);
 //CLEAR
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_cleararray(char **str);
