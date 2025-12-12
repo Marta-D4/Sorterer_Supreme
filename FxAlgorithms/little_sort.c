@@ -6,21 +6,21 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:07:10 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/11 11:55:27 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:57:26 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*lst_find_biggest(t_list *lst)
+int	lst_find_biggest(t_list *lst)
 {
-	t_list	*max;
+	int	max;
 
-	max = lst;
+	max = lst->value;
 	while (lst)
 	{
-		if (lst->value > max->value)
-			max = lst;
+		if (lst->value > max)
+			max = lst->value;
 		lst = lst->next;
 	}
 	return (max);
@@ -40,15 +40,15 @@ t_list	*lst_find_lowest(t_list *lst)
 	return (min);
 }
 
-void	ft_little_sort(t_list **a)
+void	ft_little_sort(t_list **lst)
 {
-	t_list	*biggest;
+	int	biggest;
 
-	biggest = lst_find_biggest(*a);
-	if (biggest == *a)
-		fx_ra(a);
-	else if (biggest == (*a)->next)
-		fx_rra(a);
-	if ((*a)->value > (*a)->next->value)
-		fx_sa(a);
+	biggest = lst_find_biggest(*lst);
+	if (biggest == (*lst)->value)
+		fx_ra(lst);
+	else if (biggest == (*lst)->next->value)
+		fx_rra(lst);
+	if ((*lst)->value > (*lst)->next->value)
+		fx_sa(lst);
 }

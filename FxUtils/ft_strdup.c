@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 11:37:40 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/12 10:47:10 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/10/07 12:38:27 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/12/12 10:52:35 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_ps.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	void	*ptr;
+	char	*ptr;
+	size_t	x;
 
-	ptr = malloc(nmemb * size);
+	ptr = malloc(ft_strlen(s) + 1);
+	x = 0;
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	while (s[x])
+	{
+		ptr[x] = s[x];
+		x++;
+	}
+	ptr[x] = 0;
 	return (ptr);
 }

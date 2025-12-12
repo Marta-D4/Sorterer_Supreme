@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:35:50 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/01 11:00:16 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 10:52:50 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,8 @@ size_t		ft_strlen(const char *str);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 //OTHERS
 long		ft_atol(const char *nptr);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memset(void *s, int c, size_t n);
+char		*ft_strdup(const char *s);
 
 #endif

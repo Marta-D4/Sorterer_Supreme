@@ -6,27 +6,31 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:18:21 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/04 11:01:28 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:30:50 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_clear(t_list **lst, void (*del)(void *))
+void	lst_delone(t_list *lst)
+{
+	if (lst)
+		free(lst);
+}
+
+void	lst_clear(t_list **lst)
 {
 	t_list	*tmp;
-	t_list	*next;
 
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	tmp = *lst;
-	while (tmp)
+	while (*lst)
 	{
-		next = tmp->next;
-		del(tmp);
-		tmp = next;
+		tmp = (*lst)->next;
+		lst_delone(*lst);
+		*lst = tmp;
 	}
-	*lst = NULL;
 }
 
 void	ft_cleararray(char **val)
@@ -38,15 +42,13 @@ void	ft_cleararray(char **val)
 	i = 0;
 	while (val[i])
 		free(val[i++]);
-	free(val[i]);
+	free(val);
 }
 
 void	ft_freeall(char **val, t_list **lst)
 {
-	if (lst)
-		lst_clear(lst, free);
-	if (val)
-		ft_cleararray(val);
+	ft_cleararray(val);
+	lst_clear(lst);
 	ft_putstr_fd_printf("ERROR", 2);
-	exit(2);
+	exit(1);
 }

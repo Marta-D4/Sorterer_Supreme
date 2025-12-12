@@ -6,11 +6,11 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:20:15 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/14 13:29:51 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 10:51:30 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ps.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

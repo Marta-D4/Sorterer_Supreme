@@ -6,11 +6,11 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:25:32 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/01 12:16:39 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 10:51:25 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ps.h"
 
 size_t	ft_strlen(const char *s)
 {

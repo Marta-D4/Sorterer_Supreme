@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:48:34 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/11 13:35:43 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:27:49 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_isnumvalid(char *num)
 	{
 		if (num[i] < '0' || num[i] > '9')
 			return (0);
+		i++;
 	}
 	return (1);
 }

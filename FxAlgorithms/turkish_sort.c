@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:07:29 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/11 13:17:35 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:57:59 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	final_moves(t_list **a, t_list *lowest)
 
 void	ft_turkish_sort(t_list **a, t_list **b)
 {
-	t_list	*biggest;
+	int		biggest;
 	t_list	*fewer_moves;
 
 	biggest = lst_find_biggest(*a);

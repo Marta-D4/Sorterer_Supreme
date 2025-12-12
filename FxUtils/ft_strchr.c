@@ -6,11 +6,11 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:51:27 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/06 12:14:17 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/12 10:51:21 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ps.h"
 
 char	*ft_strchr(const char *s, int c)
 {
