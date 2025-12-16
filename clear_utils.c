@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:18:21 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/12 11:30:50 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:01:02 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void	ft_freeall(char **val, t_list **lst)
 {
 	ft_cleararray(val);
 	lst_clear(lst);
-	ft_putstr_fd_printf("ERROR", 2);
+	ft_putstr_fd_printf("Error\n", 2);
 	exit(1);
 }

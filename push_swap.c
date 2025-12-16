@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:50:25 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/12 12:44:22 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:38:45 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	ft_checkav(int ac, char **av, t_list **a)
 		ft_cleararray(args);
 		i++;
 	}
-	if (ft_isnumrepeat(a))
-		ft_freeall(args, a);
+	if (ft_isnumrepeat(*a))
+		ft_freeall(NULL, a);
 }
 
 int	main(int ac, char **av)

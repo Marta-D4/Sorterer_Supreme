@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:51:41 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/12/12 12:06:24 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:29:34 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		lst_addfront(t_list **lst, t_list *newnode);
 //VALIDATION
 int			ft_isnumvalid(char *num);
 int			ft_isnumlimit(long num);
-int			ft_isnumrepeat(t_list **lst);
+int			ft_isnumrepeat(t_list *lst);
 int			ft_islstsorted(t_list *node);
 //ALGORITHMS
 void		ft_little_sort(t_list **lst);
